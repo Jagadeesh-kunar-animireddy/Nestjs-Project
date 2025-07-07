@@ -13,7 +13,8 @@ export class AppController {
   // }
 
   handleAll(@Res() res: Response) {
-      res.sendFile(join('D:/nest sqlite curd/nest-sqlite-curd/my-project/out'));
+    //D:\nest js fol\nest sqlite curd\nest-sqlite-curd\my-project\out
+      res.sendFile(join(__dirname,'../my-app/out'));
       // res.sendFile(join(__dirname, '..', 'public', 'index.html'));
     }
   // res.sendFile(join('D:/Nest JS/Project-1/emloyee111/out'));
