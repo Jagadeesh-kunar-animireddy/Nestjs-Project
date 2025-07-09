@@ -9,15 +9,28 @@ jobs:
    steps:
      - name: Checkout code
        uses: actions/checkout@v4
-     - name: Set up Docker Buildx
-       uses: docker/setup-buildx-action@v3
-     - name: Login to DockerHub
-       uses: docker/login-action@v3
-       with:
-         username: ${{ secrets.DOCKERHUB_USERNAME }}
-         password: ${{ secrets.DOCKERHUB_TOKEN }}
-     - name: Build and push Docker image
-       uses: docker/build-push-action@v5
-       with:
-         push: true
-        #  tags: sujith14/dockerimage1:latest
+     - name: build image
+     - run : docker build -t getting-started .
+     - name : push image to docker hub
+     - run : 
+        docker login -u jagadeeshkumaranimireddy -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        docker push jagadeeshkumaranimireddy/nest_next_crud/v4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
